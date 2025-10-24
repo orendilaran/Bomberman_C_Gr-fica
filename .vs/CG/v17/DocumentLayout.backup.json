@@ -1,0 +1,253 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Andrei2\\Andrei\\puc\\2025_02\\CG\\CG_11_Cena\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{9C68FAD2-CD22-405C-A233-ABF1030FB5C4}|CG\\CG.csproj|d:\\andrei2\\andrei\\puc\\2025_02\\cg\\cg_11_cena\\cg\\game.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9C68FAD2-CD22-405C-A233-ABF1030FB5C4}|CG\\CG.csproj|solutionrelative:cg\\game.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9C68FAD2-CD22-405C-A233-ABF1030FB5C4}|CG\\CG.csproj|d:\\andrei2\\andrei\\puc\\2025_02\\cg\\cg_11_cena\\cg\\core\\scene.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9C68FAD2-CD22-405C-A233-ABF1030FB5C4}|CG\\CG.csproj|solutionrelative:cg\\core\\scene.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9C68FAD2-CD22-405C-A233-ABF1030FB5C4}|CG\\CG.csproj|d:\\andrei2\\andrei\\puc\\2025_02\\cg\\cg_11_cena\\cg\\core\\mesh.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9C68FAD2-CD22-405C-A233-ABF1030FB5C4}|CG\\CG.csproj|solutionrelative:cg\\core\\mesh.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9C68FAD2-CD22-405C-A233-ABF1030FB5C4}|CG\\CG.csproj|d:\\andrei2\\andrei\\puc\\2025_02\\cg\\cg_11_cena\\cg\\drawables\\drawable3d.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9C68FAD2-CD22-405C-A233-ABF1030FB5C4}|CG\\CG.csproj|solutionrelative:cg\\drawables\\drawable3d.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9C68FAD2-CD22-405C-A233-ABF1030FB5C4}|CG\\CG.csproj|d:\\andrei2\\andrei\\puc\\2025_02\\cg\\cg_11_cena\\cg\\drawables\\drawablemesh.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9C68FAD2-CD22-405C-A233-ABF1030FB5C4}|CG\\CG.csproj|solutionrelative:cg\\drawables\\drawablemesh.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9C68FAD2-CD22-405C-A233-ABF1030FB5C4}|CG\\CG.csproj|d:\\andrei2\\andrei\\puc\\2025_02\\cg\\cg_11_cena\\cg\\core\\drawable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9C68FAD2-CD22-405C-A233-ABF1030FB5C4}|CG\\CG.csproj|solutionrelative:cg\\core\\drawable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9C68FAD2-CD22-405C-A233-ABF1030FB5C4}|CG\\CG.csproj|d:\\andrei2\\andrei\\puc\\2025_02\\cg\\cg_11_cena\\cg\\core\\material.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9C68FAD2-CD22-405C-A233-ABF1030FB5C4}|CG\\CG.csproj|solutionrelative:cg\\core\\material.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9C68FAD2-CD22-405C-A233-ABF1030FB5C4}|CG\\CG.csproj|d:\\andrei2\\andrei\\puc\\2025_02\\cg\\cg_11_cena\\cg\\core\\transform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9C68FAD2-CD22-405C-A233-ABF1030FB5C4}|CG\\CG.csproj|solutionrelative:cg\\core\\transform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9C68FAD2-CD22-405C-A233-ABF1030FB5C4}|CG\\CG.csproj|d:\\andrei2\\andrei\\puc\\2025_02\\cg\\cg_11_cena\\cg\\assets\\shaders\\shader.frag||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{9C68FAD2-CD22-405C-A233-ABF1030FB5C4}|CG\\CG.csproj|solutionrelative:cg\\assets\\shaders\\shader.frag||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9C68FAD2-CD22-405C-A233-ABF1030FB5C4}|CG\\CG.csproj|d:\\andrei2\\andrei\\puc\\2025_02\\cg\\cg_11_cena\\cg\\assets\\shaders\\shader.vert||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{9C68FAD2-CD22-405C-A233-ABF1030FB5C4}|CG\\CG.csproj|solutionrelative:cg\\assets\\shaders\\shader.vert||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9C68FAD2-CD22-405C-A233-ABF1030FB5C4}|CG\\CG.csproj|d:\\andrei2\\andrei\\puc\\2025_02\\cg\\cg_11_cena\\cg\\core\\shaderprogram.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9C68FAD2-CD22-405C-A233-ABF1030FB5C4}|CG\\CG.csproj|solutionrelative:cg\\core\\shaderprogram.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9C68FAD2-CD22-405C-A233-ABF1030FB5C4}|CG\\CG.csproj|d:\\andrei2\\andrei\\puc\\2025_02\\cg\\cg_11_cena\\cg\\core\\light.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9C68FAD2-CD22-405C-A233-ABF1030FB5C4}|CG\\CG.csproj|solutionrelative:cg\\core\\light.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9C68FAD2-CD22-405C-A233-ABF1030FB5C4}|CG\\CG.csproj|d:\\andrei2\\andrei\\puc\\2025_02\\cg\\cg_11_cena\\cg\\core\\shader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9C68FAD2-CD22-405C-A233-ABF1030FB5C4}|CG\\CG.csproj|solutionrelative:cg\\core\\shader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9C68FAD2-CD22-405C-A233-ABF1030FB5C4}|CG\\CG.csproj|d:\\andrei2\\andrei\\puc\\2025_02\\cg\\cg_11_cena\\cg\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9C68FAD2-CD22-405C-A233-ABF1030FB5C4}|CG\\CG.csproj|solutionrelative:cg\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 8,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Drawable.cs",
+              "DocumentMoniker": "D:\\Andrei2\\Andrei\\puc\\2025_02\\CG\\CG_11_Cena\\CG\\Core\\Drawable.cs",
+              "RelativeDocumentMoniker": "CG\\Core\\Drawable.cs",
+              "ToolTip": "D:\\Andrei2\\Andrei\\puc\\2025_02\\CG\\CG_11_Cena\\CG\\Core\\Drawable.cs",
+              "RelativeToolTip": "CG\\Core\\Drawable.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAABEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-17T00:58:00.951Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Material.cs",
+              "DocumentMoniker": "D:\\Andrei2\\Andrei\\puc\\2025_02\\CG\\CG_11_Cena\\CG\\Core\\Material.cs",
+              "RelativeDocumentMoniker": "CG\\Core\\Material.cs",
+              "ToolTip": "D:\\Andrei2\\Andrei\\puc\\2025_02\\CG\\CG_11_Cena\\CG\\Core\\Material.cs",
+              "RelativeToolTip": "CG\\Core\\Material.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAHgAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-10T01:26:44.493Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "shader.frag",
+              "DocumentMoniker": "D:\\Andrei2\\Andrei\\puc\\2025_02\\CG\\CG_11_Cena\\CG\\assets\\shaders\\shader.frag",
+              "RelativeDocumentMoniker": "CG\\assets\\shaders\\shader.frag",
+              "ToolTip": "D:\\Andrei2\\Andrei\\puc\\2025_02\\CG\\CG_11_Cena\\CG\\assets\\shaders\\shader.frag",
+              "RelativeToolTip": "CG\\assets\\shaders\\shader.frag",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAABEAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-10-10T01:21:06.739Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "shader.vert",
+              "DocumentMoniker": "D:\\Andrei2\\Andrei\\puc\\2025_02\\CG\\CG_11_Cena\\CG\\assets\\shaders\\shader.vert",
+              "RelativeDocumentMoniker": "CG\\assets\\shaders\\shader.vert",
+              "ToolTip": "D:\\Andrei2\\Andrei\\puc\\2025_02\\CG\\CG_11_Cena\\CG\\assets\\shaders\\shader.vert",
+              "RelativeToolTip": "CG\\assets\\shaders\\shader.vert",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAA2AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-10-10T01:20:27.594Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\Andrei2\\Andrei\\puc\\2025_02\\CG\\CG_11_Cena\\CG\\Program.cs",
+              "RelativeDocumentMoniker": "CG\\Program.cs",
+              "ToolTip": "D:\\Andrei2\\Andrei\\puc\\2025_02\\CG\\CG_11_Cena\\CG\\Program.cs",
+              "RelativeToolTip": "CG\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-22T01:53:23.206Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "ShaderProgram.cs",
+              "DocumentMoniker": "D:\\Andrei2\\Andrei\\puc\\2025_02\\CG\\CG_11_Cena\\CG\\Core\\ShaderProgram.cs",
+              "RelativeDocumentMoniker": "CG\\Core\\ShaderProgram.cs",
+              "ToolTip": "D:\\Andrei2\\Andrei\\puc\\2025_02\\CG\\CG_11_Cena\\CG\\Core\\ShaderProgram.cs",
+              "RelativeToolTip": "CG\\Core\\ShaderProgram.cs",
+              "ViewState": "AgIAAFMAAAAAAAAAAAAWwF4AAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-22T01:38:12.455Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Shader.cs",
+              "DocumentMoniker": "D:\\Andrei2\\Andrei\\puc\\2025_02\\CG\\CG_11_Cena\\CG\\Core\\Shader.cs",
+              "RelativeDocumentMoniker": "CG\\Core\\Shader.cs",
+              "ToolTip": "D:\\Andrei2\\Andrei\\puc\\2025_02\\CG\\CG_11_Cena\\CG\\Core\\Shader.cs",
+              "RelativeToolTip": "CG\\Core\\Shader.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-22T01:28:27.99Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Mesh.cs",
+              "DocumentMoniker": "D:\\Andrei2\\Andrei\\puc\\2025_02\\CG\\CG_11_Cena\\CG\\Core\\Mesh.cs",
+              "RelativeDocumentMoniker": "CG\\Core\\Mesh.cs",
+              "ToolTip": "D:\\Andrei2\\Andrei\\puc\\2025_02\\CG\\CG_11_Cena\\CG\\Core\\Mesh.cs",
+              "RelativeToolTip": "CG\\Core\\Mesh.cs",
+              "ViewState": "AgIAADsAAAAAAAAAAAAawEEAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-22T01:23:33.329Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Game.cs",
+              "DocumentMoniker": "D:\\Andrei2\\Andrei\\puc\\2025_02\\CG\\CG_11_Cena\\CG\\Game.cs",
+              "RelativeDocumentMoniker": "CG\\Game.cs",
+              "ToolTip": "D:\\Andrei2\\Andrei\\puc\\2025_02\\CG\\CG_11_Cena\\CG\\Game.cs",
+              "RelativeToolTip": "CG\\Game.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAArwBoAAABAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-22T01:24:39.901Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "DrawableMesh.cs",
+              "DocumentMoniker": "D:\\Andrei2\\Andrei\\puc\\2025_02\\CG\\CG_11_Cena\\CG\\Drawables\\DrawableMesh.cs",
+              "RelativeDocumentMoniker": "CG\\Drawables\\DrawableMesh.cs",
+              "ToolTip": "D:\\Andrei2\\Andrei\\puc\\2025_02\\CG\\CG_11_Cena\\CG\\Drawables\\DrawableMesh.cs",
+              "RelativeToolTip": "CG\\Drawables\\DrawableMesh.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAgwBoAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-17T00:59:27.882Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Drawable3D.cs",
+              "DocumentMoniker": "D:\\Andrei2\\Andrei\\puc\\2025_02\\CG\\CG_11_Cena\\CG\\Drawables\\Drawable3D.cs",
+              "RelativeDocumentMoniker": "CG\\Drawables\\Drawable3D.cs",
+              "ToolTip": "D:\\Andrei2\\Andrei\\puc\\2025_02\\CG\\CG_11_Cena\\CG\\Drawables\\Drawable3D.cs",
+              "RelativeToolTip": "CG\\Drawables\\Drawable3D.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABAAAAA7AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-17T00:58:59.774Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Scene.cs",
+              "DocumentMoniker": "D:\\Andrei2\\Andrei\\puc\\2025_02\\CG\\CG_11_Cena\\CG\\Core\\Scene.cs",
+              "RelativeDocumentMoniker": "CG\\Core\\Scene.cs",
+              "ToolTip": "D:\\Andrei2\\Andrei\\puc\\2025_02\\CG\\CG_11_Cena\\CG\\Core\\Scene.cs",
+              "RelativeToolTip": "CG\\Core\\Scene.cs",
+              "ViewState": "AgIAACAAAAAAAAAAAAAwwCwAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-17T00:57:34.137Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Transform.cs",
+              "DocumentMoniker": "D:\\Andrei2\\Andrei\\puc\\2025_02\\CG\\CG_11_Cena\\CG\\Core\\Transform.cs",
+              "RelativeDocumentMoniker": "CG\\Core\\Transform.cs",
+              "ToolTip": "D:\\Andrei2\\Andrei\\puc\\2025_02\\CG\\CG_11_Cena\\CG\\Core\\Transform.cs",
+              "RelativeToolTip": "CG\\Core\\Transform.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-17T23:13:20.99Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Light.cs",
+              "DocumentMoniker": "D:\\Andrei2\\Andrei\\puc\\2025_02\\CG\\CG_11_Cena\\CG\\Core\\Light.cs",
+              "RelativeDocumentMoniker": "CG\\Core\\Light.cs",
+              "ToolTip": "D:\\Andrei2\\Andrei\\puc\\2025_02\\CG\\CG_11_Cena\\CG\\Core\\Light.cs",
+              "RelativeToolTip": "CG\\Core\\Light.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-17T00:05:54.855Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
