@@ -37,3 +37,4 @@ C:\Camila\Fork\Bomberman_C_Gr-fica\CG\obj\Debug\net8.0\refint\CG.dll
 C:\Camila\Fork\Bomberman_C_Gr-fica\CG\obj\Debug\net8.0\CG.pdb
 C:\Camila\Fork\Bomberman_C_Gr-fica\CG\obj\Debug\net8.0\CG.genruntimeconfig.cache
 C:\Camila\Fork\Bomberman_C_Gr-fica\CG\obj\Debug\net8.0\ref\CG.dll
+C:\Camila\Fork\Bomberman_C_Gr-fica\CG\obj\Debug\net8.0\CG.sourcelink.json

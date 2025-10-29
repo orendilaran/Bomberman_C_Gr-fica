@@ -14,6 +14,9 @@ namespace CG
         Mesh mesh2;
         Mesh chão;
         Mesh Muro1;
+        Mesh Muro2;
+        Mesh Muro3;
+        Mesh Muro4;
         ShaderProgram program;
         Texture texture;
         Texture texture3;
@@ -27,8 +30,11 @@ namespace CG
         Scene scene = new();
         public Game(GameWindowSettings gameWindowSettings, NativeWindowSettings nativeWindowSettings) : base(gameWindowSettings, nativeWindowSettings)
         {
-            Muro1 = Primitive.CreateRectangularPrism(2f,50f,1f);
-            chão = Primitive.CreatePlane(100f,100f);
+            Muro1 = Primitive.CreateRectangularPrism(1f, 2f, 51f);
+            Muro2 = Primitive.CreateRectangularPrism(25f, 2f, 1f);
+            Muro3 = Primitive.CreateRectangularPrism(51f, 2f, 1f);
+            Muro4 = Primitive.CreateRectangularPrism(1f,2f,25f);
+            chão = Primitive.CreatePlane(25f,50f);
             mesh = Primitive.CreateCube(2f);
             //mesh2 = Primitive.CreateSphere(1f, 32, 16);
             mesh2 = Mesh.LoadFromFile("./assets/models/model.glb")[0];
@@ -66,6 +72,8 @@ namespace CG
             texture = new Texture("./assets/textures/image.jpg");
             texture3 = new Texture("./assets/textures/tijolo.jpeg");
 
+           
+
             //  Criação de materiais, com os valores para as propriedades do shader.
             material1 = new Material(program);
             material1.SetFloat("u_SpecularIntensity", 0.5f);
@@ -84,24 +92,41 @@ namespace CG
             material3 = new Material(program);
             material3.SetFloat("u_SpecularIntensity", 0.1f);
             material3.SetVec3("u_Color", 0f, 0.7f, 0.3f);
-
+            
+            //Material dos muros
             material4 = new Material(program);
             material4.SetFloat("u_SpecularIntensity", 0.5f);
             material4.SetVec3("u_Color", 0.5f, 0.5f, 0.5f);
             material4.SetTexture("u_Texture", texture3);
+            //
+
+       
+        // Função auxiliar para adicionar objetos na cena
+             void AdicionarObjetoNaCena(Material material, Mesh mesh, Vector3 position, float rotationX = 0f,float rotationY = 0f,float rotationZ = 0f)
+            {
+                Drawable3D drawable = new(material, mesh);
+                drawable.Transform.position = position;
+                drawable.Transform.rotation.X = rotationX;
+                drawable.Transform.rotation.Y = rotationY;
+                drawable.Transform.rotation.Z = rotationZ;
+                scene.AddDrawable(drawable);
+            }
+        //
            
-
             drawable1 = new(material1, mesh);
-            drawable1.Transform.position = new Vector3(2f, 0f, 1f);
-            drawable2 = new(material2, mesh2);
+            drawable1.Transform.position = new Vector3(2f, 0f, 1f);
+            scene.AddDrawable(drawable1);
+            
+            drawable2 = new(material2, mesh2);
+            scene.AddDrawable(drawable2); // Adicionado à cena
 
-            Drawable3D muro = new(material4, Muro1);
-            muro.Transform.position = new Vector3(-5f, 25f, 0f);
-            muro.Transform.rotation.X = 0f;
-
-            Drawable3D floor = new(material3, chão);
-            floor.Transform.position = new Vector3(0f, -1f, 0f);
-            floor.Transform.rotation.X = 0f;
+            // Objetos do cenário (usando a nova função auxiliar)
+            AdicionarObjetoNaCena(material3, chão, new Vector3(0f, 0f, 0f));
+            AdicionarObjetoNaCena(material4, Muro1, new Vector3(12.5f, 2f, 0f),0f,0f,0f);
+            AdicionarObjetoNaCena(material4, Muro2, new Vector3(0f, 2f, 25f),0f,0f,0f);
+            AdicionarObjetoNaCena(material4, Muro3, new Vector3(-12.5f, 2f, 0f),0f,-90f,0f);
+            AdicionarObjetoNaCena(material4, Muro4, new Vector3(0f, 2f,-25f),0f,90f,0f);
+           
 
             camera = new PerspectiveCamera((float)Size.X / Size.Y, 60f);
             camera.position.Z = 10f;
@@ -109,10 +134,7 @@ namespace CG
 
             //Aqui é pra renderizar os objetos
 
-            scene.AddDrawable(drawable1);
-            scene.AddDrawable(drawable2);
-            scene.AddDrawable(floor);
-            scene.AddDrawable(muro);
+           
 
             scene.DirectionalLight.rotation.X = -90f;
 
@@ -161,7 +183,7 @@ namespace CG
             camera.rotation.X -= MouseState.Delta.Y * 0.1f;
             camera.rotation.X = MathF.Max(MathF.Min(camera.rotation.X, 90f), -90f);
 
-            scene.DirectionalLight.rotation.X += delta * 5f;
+            //scene.DirectionalLight.rotation.X += delta * 5f;
 
             drawable1.Transform.rotation.Y += delta * 10f;
         }
