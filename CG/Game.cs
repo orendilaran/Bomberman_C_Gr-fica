@@ -34,19 +34,19 @@ namespace CG
         Material material3;
         Material material4;
         Material material5; 
+        Material material6; 
         Scene scene = new();
+        
+        private Random random = new(); 
 
         // --- LÓGICA DO GRID CORRIGIDA ---
-        // Esta é a fonte da verdade para o tamanho do grid.
         private const int GRID_CELLS_X = 13; 
         private const int GRID_CELLS_Z = 20; 
 
-        // Os tamanhos do mundo são baseados no número de células (1 célula = 1 unidade de tamanho)
         private float gridWidth = GRID_CELLS_X;
         private float gridDepth = GRID_CELLS_Z;
 
         private int[,] logicalGrid; 
-        // ---------------------------------
         
         private int p1GridX = 1;
         private int p1GridZ = 1;
@@ -58,15 +58,14 @@ namespace CG
             logicalGrid = new int[GRID_CELLS_X, GRID_CELLS_Z];
 
             // --- Geometria (Meshes) ---
-            // Os tamanhos agora estão consistentes com o grid 13x20
-            Muro1 = Primitive.CreateRectangularPrism(1f, 0.5f, gridDepth + 2); // Muro lateral (profundidade 20)
-            Muro2 = Primitive.CreateRectangularPrism(gridWidth, 0.5f, 1f); // Muro frontal (largura 13)
-            Muro3 = Primitive.CreateRectangularPrism(1f, 0.5f, gridDepth + 2); // Muro lateral (profundidade 20)
-            Muro4 = Primitive.CreateRectangularPrism(gridWidth, 0.5f, 1f); // Muro traseiro (largura 13)
+            Muro1 = Primitive.CreateRectangularPrism(1f, 0.5f, gridDepth + 2); 
+            Muro2 = Primitive.CreateRectangularPrism(gridWidth, 0.5f, 1f); 
+            Muro3 = Primitive.CreateRectangularPrism(1f, 0.5f, gridDepth + 2); 
+            Muro4 = Primitive.CreateRectangularPrism(gridWidth, 0.5f, 1f); 
             
-            chão = Primitive.CreatePlane(gridWidth, gridDepth); // Chão 13x20
-            mesh = Primitive.CreateCube(1f); // Cubo de 1x1 para caber nas células
-            gridMesh = Primitive.CreateGrid(gridWidth, gridDepth, GRID_CELLS_X, GRID_CELLS_Z); // Grid visual 13x20
+            chão = Primitive.CreatePlane(gridWidth, gridDepth); 
+            mesh = Primitive.CreateCube(1f); 
+            gridMesh = Primitive.CreateGrid(gridWidth, gridDepth, GRID_CELLS_X, GRID_CELLS_Z); 
             mesh2 = Mesh.LoadFromFile("./assets/models/model.glb")[0];
 
 
@@ -83,10 +82,9 @@ namespace CG
             Texture texture2 = new Texture("./assets/textures/house.png");
 
             // --- Materiais ---
-            // (Grid sem textura e com uma cor sólida, como cinza)
             gridMaterial = new Material(program);
-            gridMaterial.SetFloat("u_SpecularIntensity", 0.0f); // Sem brilho especular
-            gridMaterial.SetVec3("u_Color", 0.3f, 0.3f, 0.3f); // Cinza escuro
+            gridMaterial.SetFloat("u_SpecularIntensity", 0.0f); 
+            gridMaterial.SetVec3("u_Color", 0.3f, 0.3f, 0.3f); 
             
             material1 = new Material(program);
             material1.SetFloat("u_SpecularIntensity", 0.5f);
@@ -102,7 +100,6 @@ namespace CG
             material3.SetFloat("u_SpecularIntensity", 0.1f);
             material3.SetVec3("u_Color", 0f, 0.7f, 0.3f);
             
-            //Material dos muros (reutilizando 'material4')
             material4 = new Material(program);
             material4.SetFloat("u_SpecularIntensity", 0.5f);
             material4.SetVec3("u_Color", 0.5f, 0.5f, 0.5f);
@@ -111,10 +108,15 @@ namespace CG
             material5 = new Material(program);
             material5.SetFloat("u_SpecularIntensity", 0.3f);
             material5.SetVec3("u_Color", 0.2f, 0.2f, 0.2f); 
+            
+            material6 = new Material(program);
+            material6.SetFloat("u_SpecularIntensity", 0.4f);
+            material6.SetVec3("u_Color", 0.6f, 0.4f, 0.2f); 
 
             // --- Criação e Posicionamento de Objetos ---
             
             GenerateHardWalls(); 
+            GenerateSoftWalls(); 
 
             player1Drawable = SpawnPlayer(p1GridX, p1GridZ, material1, 0.5f); 
 
@@ -126,10 +128,10 @@ namespace CG
             player2Drawable = SpawnPlayer(p2GridX, p2GridZ, p2Material, 0.5f);
             
             // Objetos do cenário
-            AdicionarObjetoNaCena(gridMaterial, gridMesh, new Vector3(0f, 0.01f, 0f)); // Um pouco acima do chão
+            AdicionarObjetoNaCena(gridMaterial, gridMesh, new Vector3(0f, 0.01f, 0f)); 
             AdicionarObjetoNaCena(material3, chão, new Vector3(0f, 0f, 0f));
             
-            // Posições dos muros corrigidas para o grid 13x20
+            // Posições dos muros
             float halfWidth = gridWidth / 2f;
             float halfDepth = gridDepth / 2f;
             AdicionarObjetoNaCena(material4, Muro1, new Vector3(halfWidth + 0.5f, 1f, 0f)); 
@@ -164,12 +166,45 @@ namespace CG
                 }
             }
         }
+
+        private void GenerateSoftWalls()
+        {
+            float probability = 0.7f; 
+            
+            for (int x = 1; x < GRID_CELLS_X - 1; x++) 
+            {
+                for (int z = 1; z < GRID_CELLS_Z - 1; z++)
+                {
+                    if (logicalGrid[x, z] == 0)
+                    {
+                        if ((x == 1 && z == 2) || (x == 2 && z == 1))
+                        {
+                            continue; 
+                        }
+                        
+                        int p2x = GRID_CELLS_X - 2;
+                        int p2z = GRID_CELLS_Z - 2;
+                        
+                        if ((x == p2x - 1 && z == p2z) || (x == p2x && z == p2z - 1))
+                        {
+                            continue; 
+                        }
+                        
+                        if (random.NextSingle() < probability) 
+                        {
+                            logicalGrid[x, z] = 1; 
+
+                            Vector3 worldPosition = GridToWorld(x, z, 0.5f); 
+                            AdicionarObjetoNaCena(material6, mesh, worldPosition);
+                        }
+                    }
+                }
+            }
+        }
         
-        // Parâmetro 'name' removido, não é mais necessário, pois Drawable3D não tem .Name
         private Drawable3D SpawnPlayer(int gridX, int gridZ, Material material, float yPosition = 0f)
         {
             Drawable3D newDrawable = AdicionarObjetoNaCena(material, mesh, GridToWorld(gridX, gridZ, yPosition));
-            // newDrawable.Name = name; // Linha removida
 
             logicalGrid[gridX, gridZ] = 3; 
             
@@ -182,8 +217,6 @@ namespace CG
         /// </summary>
         private Vector3 GridToWorld(int gridX, int gridZ, float yPosition = 0f)
         {
-            // Fórmula: (CoordenadaDoGrid - (TotalDeCélulas / 2)) + 0.5 (para o centro)
-            // Cada célula tem 1.0 de largura/profundidade
             float worldX = (float)gridX - (gridWidth / 2f) + 0.5f;
             float worldZ = (float)gridZ - (gridDepth / 2f) + 0.5f;
 
@@ -195,7 +228,6 @@ namespace CG
         /// </summary>
         private Drawable3D SpawnObjectAt(int gridX, int gridZ, Mesh mesh, Material material, float yPosition = 0f)
         {
-            // 1. Verifica se a célula é válida e está vazia
             if (gridX < 0 || gridX >= GRID_CELLS_X || gridZ < 0 || gridZ >= GRID_CELLS_Z)
             {
                 Console.WriteLine($"Erro: Tentativa de criar fora do grid em [{gridX}, {gridZ}]");
@@ -208,14 +240,11 @@ namespace CG
                 return null;
             }
 
-            // 2. Converte a coordenada do grid para a posição do mundo
             Vector3 worldPosition = GridToWorld(gridX, gridZ, yPosition);
 
-            // 3. Usa sua função auxiliar existente para criar o objeto
             Drawable3D newDrawable = AdicionarObjetoNaCena(material, mesh, worldPosition);
 
-            // 4. Marca a célula como ocupada no grid lógico
-            logicalGrid[gridX, gridZ] = 1; // 1 = Ocupado
+            logicalGrid[gridX, gridZ] = 1; 
             
             return newDrawable;
         }
@@ -231,7 +260,7 @@ namespace CG
             drawable.Transform.rotation.Y = rotationY;
             drawable.Transform.rotation.Z = rotationZ;
             scene.AddDrawable(drawable);
-            return drawable; // Retorna o objeto criado
+            return drawable; 
         }
         
         private void HandlePlayerMovement(Keys up, Keys down, Keys left, Keys right, ref int gridX, ref int gridZ, Drawable3D playerDrawable, string playerName)
@@ -285,7 +314,7 @@ namespace CG
 
             // --- Movimentação da Câmera ---
             float cameraDelta = delta * 5f;
-            if (KeyboardState.IsKeyDown(Keys.W) && !KeyboardState.IsKeyPressed(Keys.W)) // Adicionada negação para WASD da câmera não conflitar tanto com P1
+            if (KeyboardState.IsKeyDown(Keys.W) && !KeyboardState.IsKeyPressed(Keys.W)) 
             {
                 camera.position += camera.Forward * cameraDelta;
             }
@@ -333,7 +362,6 @@ namespace CG
             // --- Rotação de Objetos ---
             //scene.DirectionalLight.rotation.X += delta * 5f;
 
-            // Verifica se drawable1 não é nulo antes de tentar girá-lo
             if (drawable1 != null)
             {
                 drawable1.Transform.rotation.Y += delta * 10f;
