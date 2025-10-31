@@ -8,10 +8,12 @@ namespace CG.Core
     {
         int _count = 0;
         int _vao = 0;
+         PrimitiveType _primitiveType; //Para criar linhas
 
-        public Mesh(float[] vertices, uint[] indices)
-        {
+        public Mesh(float[] vertices, uint[] indices, PrimitiveType primitiveType = PrimitiveType.Triangles)
+            {
             _count = indices.Length;
+            _primitiveType = primitiveType; //PAra criar linhas
 
             //  Começamos criando um ArrayBuffer(vbo), um espaço na placa de vídeo para armazenar os vértices.
             //  A função GL.BindBuffer diz que estamos operando no array previamente criado.
@@ -60,7 +62,7 @@ namespace CG.Core
         public void Draw()
         {
             GL.BindVertexArray(_vao);
-            GL.DrawElements(PrimitiveType.Triangles, _count, DrawElementsType.UnsignedInt, 0);// Comando de desenho do triângulo, a partir do Element Buffer Object(ebo)
+            GL.DrawElements(_primitiveType, _count, DrawElementsType.UnsignedInt, 0);// Comando de desenho do triângulo, a partir do Element Buffer Object(ebo)
         }
 
         public static Mesh[] LoadFromFile(string path, float scale = 1f)
@@ -122,6 +124,46 @@ namespace CG.Core
 
     internal class Primitive
     {
+        public static Mesh CreateGrid(float width, float depth, int divisionsX, int divisionsZ)
+    {
+        List<float> vertices = new List<float>();
+        List<uint> indices = new List<uint>();
+        
+        float halfWidth = width / 2f;
+        float halfDepth = depth / 2f;
+        float stepX = width / divisionsX;
+        float stepZ = depth / divisionsZ;
+        
+        uint indexCounter = 0;
+
+        // Loop para criar as linhas paralelas ao eixo Z
+        for (int i = 0; i <= divisionsX; i++)
+        {
+            float x = -halfWidth + (i * stepX);
+
+            // Posição (X, Y, Z), Normal (0, 1, 0), UV (0, 0)
+            vertices.AddRange(new float[] { x, 0f, -halfDepth,   0f, 1f, 0f,   0f, 0f });
+            vertices.AddRange(new float[] { x, 0f,  halfDepth,   0f, 1f, 0f,   0f, 0f });
+
+            indices.Add(indexCounter++);
+            indices.Add(indexCounter++);
+        }
+
+        // Loop para criar as linhas paralelas ao eixo X
+        for (int i = 0; i <= divisionsZ; i++)
+        {
+            float z = -halfDepth + (i * stepZ);
+
+            vertices.AddRange(new float[] { -halfWidth, 0f, z,   0f, 1f, 0f,   0f, 0f });
+            vertices.AddRange(new float[] {  halfWidth, 0f, z,   0f, 1f, 0f,   0f, 0f });
+
+            indices.Add(indexCounter++);
+            indices.Add(indexCounter++);
+        }
+
+        // Informa ao construtor da Mesh que ela deve ser desenhada como LINHAS.
+        return new Mesh(vertices.ToArray(), indices.ToArray(), PrimitiveType.Lines);
+    }
         public static Mesh CreatePlane(float width = 1f, float depth = 1f)
         {
             float halfW = width / 2f;
