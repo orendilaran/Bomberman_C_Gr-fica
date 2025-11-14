@@ -1,4 +1,5 @@
-﻿using CG.Core;
+﻿using System.Security.Cryptography.X509Certificates;
+using CG.Core;
 using CG.Drawables;
 using OpenTK.Graphics.OpenGL;
 using OpenTK.Mathematics;
@@ -17,11 +18,13 @@ namespace CG
         Mesh Muro2;
         Mesh Muro3;
         Mesh Muro4;
+        Mesh Bomba;
         Mesh gridMesh;
         Material gridMaterial;
         ShaderProgram program;
         Texture texture;
         Texture texture3;
+        Texture Confete;
         Drawable3D drawable1;
         Drawable3D drawable2;
         
@@ -67,6 +70,7 @@ namespace CG
             mesh = Primitive.CreateCube(1f); 
             gridMesh = Primitive.CreateGrid(gridWidth, gridDepth, GRID_CELLS_X, GRID_CELLS_Z); 
             mesh2 = Mesh.LoadFromFile("./assets/models/model.glb")[0];
+            Bomba = Primitive.CreateSphere(1f);
 
 
             // --- Shaders ---
@@ -140,9 +144,10 @@ namespace CG
             AdicionarObjetoNaCena(material4, Muro4, new Vector3(0f, 1f, -halfDepth - 0.5f)); 
             
             // --- Configuração da Câmera e Cena ---
-            camera = new PerspectiveCamera((float)Size.X / Size.Y, 60f);
-            camera.position.Z = 10f;
-            camera.position.Y = 10f;
+            camera = new PerspectiveCamera((float)Size.X / Size.Y, 25f);
+            camera.position.Z = 0f;
+            camera.position.Y = 50.5f;
+            camera.rotation.X = -90f;
 
             scene.DirectionalLight.rotation.X = -90f;
             CursorState = CursorState.Grabbed;
@@ -262,7 +267,7 @@ namespace CG
             scene.AddDrawable(drawable);
             return drawable; 
         }
-        
+
         private void HandlePlayerMovement(Keys up, Keys down, Keys left, Keys right, ref int gridX, ref int gridZ, Drawable3D playerDrawable, string playerName)
         {
             int newX = gridX;
@@ -270,7 +275,7 @@ namespace CG
 
             if (KeyboardState.IsKeyPressed(up))
             {
-                newZ -= 1; 
+                newZ -= 1;
             }
             else if (KeyboardState.IsKeyPressed(down))
             {
@@ -292,8 +297,8 @@ namespace CG
 
             if (logicalGrid[newX, newZ] != 0)
             {
-                 Console.WriteLine($"{playerName} colidiu em [{newX}, {newZ}] (Valor: {logicalGrid[newX, newZ]})");
-                 return; 
+                Console.WriteLine($"{playerName} colidiu em [{newX}, {newZ}] (Valor: {logicalGrid[newX, newZ]})");
+                return;
             }
 
             logicalGrid[gridX, gridZ] = 0;
@@ -307,37 +312,42 @@ namespace CG
         }
 
         // --------------------------------------------------
+        private void SpawnaBomba(int x,int y)
+        {
+            
+        } 
+        // --------------------------------------------------
 
         protected override void OnUpdateFrame(FrameEventArgs args)
         {
             float delta = (float)args.Time;
 
-            // --- Movimentação da Câmera ---
-            float cameraDelta = delta * 5f;
-            if (KeyboardState.IsKeyDown(Keys.W) && !KeyboardState.IsKeyPressed(Keys.W)) 
-            {
-                camera.position += camera.Forward * cameraDelta;
-            }
-            if (KeyboardState.IsKeyDown(Keys.S) && !KeyboardState.IsKeyPressed(Keys.S))
-            {
-                camera.position -= camera.Forward * cameraDelta;
-            }
-            if (KeyboardState.IsKeyDown(Keys.D) && !KeyboardState.IsKeyPressed(Keys.D))
-            {
-                camera.position += camera.Right * cameraDelta;
-            }
-            if (KeyboardState.IsKeyDown(Keys.A) && !KeyboardState.IsKeyPressed(Keys.A))
-            {
-                camera.position -= camera.Right * cameraDelta;
-            }
-            if (KeyboardState.IsKeyDown(Keys.E))
-            {
-                camera.position += camera.Up * cameraDelta;
-            }
-            if (KeyboardState.IsKeyDown(Keys.Q))
-            {
-                camera.position -= camera.Up * cameraDelta;
-            }
+            // --- Movimentação da Câmera --- (Comentei, para vai que precisa no futuro)
+           // float cameraDelta = delta * 5f;
+           // if (KeyboardState.IsKeyDown(Keys.W) && !KeyboardState.IsKeyPressed(Keys.W)) 
+           // {
+           //     camera.position += camera.Forward * cameraDelta;
+           // }
+           // if (KeyboardState.IsKeyDown(Keys.S) && !KeyboardState.IsKeyPressed(Keys.S))
+           // {
+           //     camera.position -= camera.Forward * cameraDelta;
+           // }
+           // if (KeyboardState.IsKeyDown(Keys.D) && !KeyboardState.IsKeyPressed(Keys.D))
+           // {
+           //     camera.position += camera.Right * cameraDelta;
+           // }
+           // if (KeyboardState.IsKeyDown(Keys.A) && !KeyboardState.IsKeyPressed(Keys.A))
+           // {
+           //     camera.position -= camera.Right * cameraDelta;
+           // }
+           // if (KeyboardState.IsKeyDown(Keys.E))
+           // {
+           //     camera.position += camera.Up * cameraDelta;
+           // }
+           // if (KeyboardState.IsKeyDown(Keys.Q))
+           // {
+           //     camera.position -= camera.Up * cameraDelta;
+           // }
             
             HandlePlayerMovement(Keys.W, Keys.S, Keys.A, Keys.D, ref p1GridX, ref p1GridZ, player1Drawable, "Player 1");
             
@@ -348,10 +358,10 @@ namespace CG
                 CursorState = CursorState.Normal;
             }
 
-            // --- Rotação da Câmera ---
-            camera.rotation.Y -= MouseState.Delta.X * 0.1f;
-            camera.rotation.X -= MouseState.Delta.Y * 0.1f;
-            camera.rotation.X = MathF.Max(MathF.Min(camera.rotation.X, 90f), -90f);
+            // --- Rotação da Câmera --- (Comentei, para vai que precisa no futuro)
+           // camera.rotation.Y -= MouseState.Delta.X * 0.1f;
+           // camera.rotation.X -= MouseState.Delta.Y * 0.1f;
+           // camera.rotation.X = MathF.Max(MathF.Min(camera.rotation.X, 90f), -90f);
 
             // --- Lógica de Limite do Grid ---
             float halfGridWidth = gridWidth / 2f;
