@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\MyProjects\\Bomberman_C_Gr-fica\\CG\\CG.csproj": {}
+    "C:\\Users\\Marce\\Downloads\\Nova pasta (4)\\Bomberman_C_Gr-fica\\CG\\CG.csproj": {}
   },
   "projects": {
-    "D:\\MyProjects\\Bomberman_C_Gr-fica\\CG\\CG.csproj": {
+    "C:\\Users\\Marce\\Downloads\\Nova pasta (4)\\Bomberman_C_Gr-fica\\CG\\CG.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\MyProjects\\Bomberman_C_Gr-fica\\CG\\CG.csproj",
+        "projectUniqueName": "C:\\Users\\Marce\\Downloads\\Nova pasta (4)\\Bomberman_C_Gr-fica\\CG\\CG.csproj",
         "projectName": "CG",
-        "projectPath": "D:\\MyProjects\\Bomberman_C_Gr-fica\\CG\\CG.csproj",
-        "packagesPath": "C:\\Users\\paulo\\.nuget\\packages\\",
-        "outputPath": "D:\\MyProjects\\Bomberman_C_Gr-fica\\CG\\obj\\",
+        "projectPath": "C:\\Users\\Marce\\Downloads\\Nova pasta (4)\\Bomberman_C_Gr-fica\\CG\\CG.csproj",
+        "packagesPath": "C:\\Users\\Marce\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Marce\\Downloads\\Nova pasta (4)\\Bomberman_C_Gr-fica\\CG\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\paulo\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\Marce\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
@@ -37,8 +37,7 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        },
-        "SdkAnalysisLevel": "9.0.300"
+        }
       },
       "frameworks": {
         "net8.0": {
@@ -68,30 +67,12 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[8.0.19, 8.0.19]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Host.win-x64",
-              "version": "[8.0.19, 8.0.19]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Ref",
-              "version": "[8.0.19, 8.0.19]"
-            },
-            {
-              "name": "Microsoft.WindowsDesktop.App.Ref",
-              "version": "[8.0.19, 8.0.19]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.304/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.414/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
